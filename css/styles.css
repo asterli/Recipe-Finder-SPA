@@ -1,0 +1,278 @@
+/* CSS Reset - custom minimal reset (not from an external source) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+  min-height: 100vh;
+}
+
+header {
+  background: linear-gradient(135deg, #4a6cf7, #7b2ff7);
+  color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 0.3rem;
+  font-size: 1.8rem;
+}
+
+.subtitle {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.clear-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.clear-link:hover {
+  color: #fff;
+}
+
+#search-form {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.input-wrapper {
+  flex: 1;
+  position: relative;
+}
+
+#search-input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+#search-input.input-error {
+  border-color: #ff6b6b;
+}
+
+.error-tooltip {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  margin-top: 0.4rem;
+  background: #ff6b6b;
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.error-tooltip.hidden {
+  display: none;
+}
+
+#search-form button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 20px;
+  background: #333;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+#search-form button:hover {
+  background: #555;
+}
+
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* Results grid */
+.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.results .message {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #777;
+  font-size: 1.1rem;
+  padding: 2rem 0;
+}
+
+/* Loading spinner animation */
+.spinner {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.spinner::after {
+  content: "";
+  width: 36px;
+  height: 36px;
+  border: 4px solid #ddd;
+  border-top-color: #4a6cf7;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.card {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 0.75rem 0.75rem 0.5rem;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.card-category {
+  display: inline-block;
+  margin: 0 0.75rem 0.75rem;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  color: #fff;
+  background: linear-gradient(135deg, #4a6cf7, #7b2ff7);
+  border-radius: 12px;
+}
+
+/* Recipe detail view */
+.recipe-detail {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.recipe-detail.hidden {
+  display: none;
+}
+
+.recipe-detail .back-btn {
+  background: linear-gradient(135deg, #4a6cf7, #7b2ff7);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.recipe-detail .back-btn:hover {
+  background: linear-gradient(135deg, #3b5de7, #6a1ee7);
+}
+
+.recipe-detail h2 {
+  margin-bottom: 0.5rem;
+}
+
+.recipe-detail .meta {
+  color: #777;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.recipe-detail .detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.recipe-detail img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.recipe-detail h3 {
+  margin: 1rem 0 0.5rem;
+}
+
+.recipe-detail ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+}
+
+.recipe-detail ul li {
+  margin-bottom: 0.3rem;
+}
+
+.recipe-detail .instructions {
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+.recipe-detail .video-link {
+  display: inline-block;
+  margin-top: 1rem;
+  background: linear-gradient(135deg, #4a6cf7, #7b2ff7);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.recipe-detail .video-link:hover {
+  background: linear-gradient(135deg, #3b5de7, #6a1ee7);
+}
+
+@media (max-width: 600px) {
+  .recipe-detail .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .results {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+}

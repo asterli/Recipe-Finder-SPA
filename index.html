@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Finder</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>🍽️ Recipe Finder</h1>
+    <p class="subtitle">Search for delicious recipes from around the world</p>
+    <form id="search-form">
+      <div class="input-wrapper">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search for a recipe..."
+          autocomplete="off"
+        >
+        <span id="error-tooltip" class="error-tooltip hidden">Please enter a search term</span>
+      </div>
+      <button type="submit">Search</button>
+    </form>
+    <a href="#" id="clear-btn" class="clear-link">Clear results</a>
+  </header>
+
+  <main>
+    <section id="results" class="results"></section>
+    <section id="recipe-detail" class="recipe-detail hidden"></section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
